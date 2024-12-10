@@ -170,32 +170,29 @@ class RepoSidebarProvider implements vscode.WebviewViewProvider {
     }
 
     const htmlRoot = path.join(this._docviewerDir, repoName, subDir);
-    const filePath = path.join(htmlRoot, "index.html");
-    const filePathNda = path.join(htmlRoot, "index_nda.html");
+
     const selectorJsFile = path.join(htmlRoot, "_static", "js", "selector.js");
-    let indexFille = "";
+    let indexFile = "";
     let uri = "";
+    
     try {
-      // if (fs.existsSync(selectorJsFile)) {
-      //   fs.promises.rm(selectorJsFile); //remove selector.js
-      // }
-      if (fs.existsSync(filePath)) {
-        indexFille = filePath;
-        uri = `/${repoName}/${subDir}/index.html`;
+      if (fs.existsSync(selectorJsFile)) {
+        fs.promises.rm(selectorJsFile); // remove selector.js
       }
-      else if (fs.existsSync(filePathNda)) {
-        indexFille = filePathNda;
-        uri = `/${repoName}/${subDir}/index_nda.html`;
-      }
-      else {
-        vscode.window.showWarningMessage('Can not find index.html or index_nda.html!');
+    
+      const files = fs.readdirSync(htmlRoot).filter(file => file.toLowerCase().startsWith('index') && file.endsWith('.html'));
+      if (files.length > 0) {
+        indexFile = path.join(htmlRoot, files[0]);
+        uri = `/${repoName}/${subDir}/${files[0]}`;
+      } else {
+        vscode.window.showWarningMessage('Can not find any html file starting with "index"!');
         return;
       }
-
+    
       this._docViewPannel.show();
       this._docViewPannel.setUrl(uri);
-
-      console.log("Opened index.html from path:", filePath);
+    
+      console.log("Opened HTML file from path:", indexFile);
     } catch (error) {
       console.error("Error opening repository path:", error);
     }
