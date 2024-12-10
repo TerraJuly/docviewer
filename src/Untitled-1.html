@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="${styleUri}" rel="stylesheet">
+  <title>Repository Sidebar</title>
+</head>
+<body>
+  <div>
+    <div class="header">
+      <h3>仓库列表</h3>
+      <img src="add_icon.svg" id="addButton" alt="Add" title="Add">
+    </div>
+    <hr>
+    <ul id="repoList"></ul>
+  </div>
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2 id="modalTitle">编辑仓库</h2>
+      <label for="repoName">名称：</label>
+      <input type="text" id="repoName"><br><br>
+      <label for="repoPath">路径：</label>
+      <input type="text" id="repoPath"><br><br>
+      <button id="cancelButton">放弃</button>
+      <button id="saveButton">保存</button>
+    </div>
+  </div>
+  <script src="${scriptUri}"></script>
+</body>
+</html>

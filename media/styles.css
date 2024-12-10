@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  #addButton {
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .img-icon {
+    cursor: pointer;
+    margin-left: 10px;
+    width: 16px;
+    
+  }
+
+  hr {
+    margin-top: 0; /* 去除顶部外边距 */
+  }
+
+  img {
+    height: 15px;
+    width: auto; /* 保持宽高比 */
+    filter: invert(100%) brightness(200%);
+  }
+
+  tr {
+    height: 12px;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background-color: #fdfdfd;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .modal-content input {
+    width: 80%;
+  }
+
+  .modal-content label {
+    color: #000;
+  }
+  
+  .modal-content h2 {
+    color: #000;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
