@@ -1,12 +1,23 @@
 {
   "name": "docviewer",
   "displayName": "DocViewer",
-  "publisher": "terra_cai",
+  "publisher": "TerraJuly",
   "description": "This plugin is used to view html documents from git repos.",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.75.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TerraJuly/docviewer.git"
+  },
+  "keywords": [
+    "git",
+    "html",
+    "view"
+  ],
+  "author": "TerraJuly",
+  "license": "MIT",
   "icon": "images/dog.png",
   "categories": [
     "Other"
